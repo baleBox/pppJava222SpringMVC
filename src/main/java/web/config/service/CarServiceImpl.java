@@ -20,13 +20,6 @@ public class CarServiceImpl {
         cars.add(new Car("Lada", "silver", 180));
     }
 
-//    public List<Car> getCars(int count) {
-//        return cars.stream().limit(count).collect(Collectors.toList());
-//    }
-
-    public List<Car> getCars() {
-        return cars;
-    }
 
     public List<Car> getCarsByCount(int count) {
         if (count >= cars.size()) {
