@@ -1,16 +1,15 @@
-package web.config.service;
+package web.dao;
 
 import org.springframework.stereotype.Component;
 import web.models.Car;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class CarServiceImpl {
+public class CarDaoImpl implements CarDao {
     private final List<Car> cars;
 
-    public CarServiceImpl() {
+    public CarDaoImpl() {
         cars = new ArrayList<>();
 
         cars.add(new Car("BMW", "black", 250));
@@ -18,9 +17,10 @@ public class CarServiceImpl {
         cars.add(new Car("Audi", "green", 270));
         cars.add(new Car("KIA", "red", 190));
         cars.add(new Car("Lada", "silver", 180));
+
     }
 
-
+    @Override
     public List<Car> getCarsByCount(int count) {
         if (count >= cars.size()) {
             return cars;
